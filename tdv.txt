@@ -2,3 +2,4 @@ tranducviet.txt
 this is new change
 this is dog
 this is cat
+this is dog and cat
