@@ -22,12 +22,18 @@ print ("Tran Duc Viet")
 # list.sort()
 # print  ('This is sort list:',list)
 
+print ('tran duc viet')
+
 a = [1,2,1,8,9,4,2,5,1,3]
 print (a)
 b = input()
+c = []
 for i in range (len(a)):
-    if a[i] < int(b):
-        print (a[i])
+     if a[i] < int(b):
+        c = c + [a[i]]
+
+print(c)
+
 
 
 
