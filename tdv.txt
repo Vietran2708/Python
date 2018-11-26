@@ -3,3 +3,45 @@ this is new change
 this is dog
 this is cat
 this is dog and cat
+print('tran duc viet')
+import numpy as np
+#a = [1, 2]
+#b = [3, 4]
+#c = a+b
+#print(c)
+#d = np.zeros(10)
+#print(d)
+e = np.arange(10)
+print(e)
+print(type(e))
+f = np.arange(21)
+print(f)
+print(f.reshape(3,7))
+print(f)
+#print(f.reshape(4,5))
+print(f.ndim)
+g= f.reshape(3,7)
+print(type (g))
+print(g.ndim)
+print(f.shape)
+print(f.dtype)
+print(np.arange(1,16,2))
+j= np.linspace(0,12,4)
+print(j)
+# a = np.random.random((3,5))
+# print(a)
+a = np.array([1,1,1,1])
+b= np.array([1,2,3,4])
+#c= a+b
+#print(c)
+d= np.arange(9).reshape(3,3)
+print(d)
+c= np.arange(9).reshape(3,3)
+print(c)
+print (d*c)
+print (d**c)
+print(d.mean(axis=0))
+print(d.sum())
+k[:,0]
+for i in k[:0]:
+    print(i)
