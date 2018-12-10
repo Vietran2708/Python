@@ -25,3 +25,13 @@ g[1::2,::2] = 1
 g[::2,1::2] = 1
 print(g)
 http://sanjaymeena.io/tech/100-Numpy-Exercises/
+###Q8
+j = np.random.rand(5,2)
+print(j)
+###09
+k = np.random.random((5,2))
+X,Y = k[:,0], k[:,1]
+R = np.sqrt(X**2+Y**2)
+T = np.arctan2(Y,X)
+print(R)
+print(T)
