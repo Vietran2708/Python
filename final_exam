@@ -24,3 +24,4 @@ g = np.zeros((8,8),dtype=int)
 g[1::2,::2] = 1
 g[::2,1::2] = 1
 print(g)
+http://sanjaymeena.io/tech/100-Numpy-Exercises/
