@@ -10,3 +10,17 @@ print(x.reshape(5,5))
 ###Q3
 c = np.identity(3)
 print(c)
+###Q5
+e = np.arange(0,27)
+print(e.reshape(3,3,3))
+###Q6
+f = np.zeros((10,10))
+f[1:-1,1:-1] = 1
+print(f)
+###Q7
+g = np.ones((3,3))
+print(g)
+g = np.zeros((8,8),dtype=int)
+g[1::2,::2] = 1
+g[::2,1::2] = 1
+print(g)
