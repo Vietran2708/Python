@@ -1,3 +1,5 @@
+print('tran duc viet')
+import numpy as np
 ###Q1
 a = np.arange(28,52,1)
 print(a)
