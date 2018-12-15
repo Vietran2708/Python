@@ -27,6 +27,7 @@ g[1::2,::2] = 1
 g[::2,1::2] = 1
 print(g)
 http://sanjaymeena.io/tech/100-Numpy-Exercises/
+https://zhuanlan.zhihu.com/p/23331292
 ###Q8
 h = np.zeros((6,6))
 h += np.arange(6)
