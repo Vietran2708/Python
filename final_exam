@@ -28,6 +28,7 @@ g[::2,1::2] = 1
 print(g)
 http://sanjaymeena.io/tech/100-Numpy-Exercises/
 https://zhuanlan.zhihu.com/p/23331292
+https://stackoverflow.com/questions/4116658/faster-numpy-cartesian-to-spherical-coordinate-conversion/4116803
 ###Q8
 h = np.zeros((6,6))
 h += np.arange(6)
@@ -39,3 +40,55 @@ R = np.sqrt(X**2+Y**2)
 T = np.arctan2(Y,X)
 print(R)
 print(T)
+
+
+
+#####
+http://sanjaymeena.io/tech/100-Numpy-Exercises/
+https://zhuanlan.zhihu.com/p/23331292
+https://stackoverflow.com/questions/4116658/faster-numpy-cartesian-to-spherical-coordinate-conversion/4116803
+import numpy as np
+from numpy import arctan2, sqrt
+import numexpr as ne
+########
+def cart2sph(x,y,z, ceval=ne.evaluate):
+    """ x, y, z :  ndarray coordinates
+        ceval: backend to use: 
+              - eval :  pure Numpy
+              - numexpr.evaluate:  Numexpr """
+    azimuth = ceval('arctan2(y,x)')
+    xy2 = ceval('x**2 + y**2')
+    elevation = ceval('arctan2(z, sqrt(xy2))')
+    r = eval('sqrt(xy2 + z**2)')
+    return azimuth, elevation, r
+    
+    #####
+If we convert that to the physics system (r, theta, phi) = (r, elev, azimuth) we have:
+
+r = sqrt(x*x + y*y + z*z)
+phi = atan2(y,x)
+theta = acos(z,r)
+#####
+from sympy import *
+def asCartesian(rthetaphi):
+    #takes list rthetaphi (single coord)
+    r       = rthetaphi[0]
+    theta   = rthetaphi[1]* pi/180 # to radian
+    phi     = rthetaphi[2]* pi/180
+    x = r * sin( theta ) * cos( phi )
+    y = r * sin( theta ) * sin( phi )
+    z = r * cos( theta )
+    return [x,y,z]
+
+def asSpherical(xyz):
+    #takes list xyz (single coord)
+    x       = xyz[0]
+    y       = xyz[1]
+    z       = xyz[2]
+    r       =  sqrt(x*x + y*y + z*z)
+    theta   =  acos(z/r)*180/ pi #to degrees
+    phi     =  atan2(y,x)*180/ pi
+    return [r,theta,phi]
+    ######
+
+    
